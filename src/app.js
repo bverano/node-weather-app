@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const weather = require('./utils/weather');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //DEFINE PATHS FOR EXPRESS CONFIG
 const public_dir_path = path.join(__dirname, '../public');
@@ -95,6 +96,6 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.');
+app.listen(port, () => {
+    console.log('Server is up on port ' + port);
 });
